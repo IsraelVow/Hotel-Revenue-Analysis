@@ -11,11 +11,11 @@ and connect this database to powerbi and answer some business questions
 and have a visual project end to end
 
 # Questions asked by stakeholders.
-1. Build a visual data story or dashboard using Power BI to present to your stakeholders.
+1. Build a visual data story or dashboard using Power BI to present to stakeholders.
 	is our hotel revenue growing by year?
 	(There are two hotel types,so i segmented revenue by hotel type.)
 
-	Should i increase our parking lot size?
+	Should i increase the parking lot size?
 	(Ascertain if there is a trend in guest with personal cars.)
 
 	What trends can be seen in the data?
