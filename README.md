@@ -1,125 +1,86 @@
-# Hotel-Revenue-Analysis
- SQL &amp; PowerBI Integration
+# Hotel Revenue Analysis - Data Analyst Readme
 
-# Using Hotel Data
+## Overview
+This project focuses on analyzing hotel revenue using SQL and Power BI integrations. The goal is to build an end-to-end visual project to answer various business questions posed by stakeholders. The analysis involves creating an SQL database, uploading Excel data to the database, connecting it to Power BI, and building visualizations to present key insights.
 
-# Goal
-	
-I created an SQL Database with SQL server 
-uploading excel datas to this database that i created 
-and connect this database to powerbi and answer some business questions
-and have a visual project end to end
+## Business Questions
+The stakeholders have raised the following questions that need to be addressed through the data analysis:
 
-# Questions asked by stakeholders.
-1. Build a visual data story or dashboard using Power BI to present to stakeholders.
-	is our hotel revenue growing by year?
-	(There are two hotel types,so i segmented revenue by hotel type.)
+1. **Is our hotel revenue growing year over year?**
+   - To answer this, revenue will be segmented by year, and further segmented by two hotel types.
+   
+2. **Should I increase the parking lot size?**
+   - This question aims to ascertain if there is a trend in guests with personal cars.
 
-	Should i increase the parking lot size?
-	(Ascertain if there is a trend in guest with personal cars.)
+3. **What trends can be seen in the data?**
+   - The focus will be on the average daily rate and guests' exploration of seasonality.
 
-	What trends can be seen in the data?
-	(Focus on average daily rate and guests to explore seasonality.)
+## Solutions/Pipeline
+The data analyst will follow these steps to conduct the analysis and provide meaningful insights:
 
+1. **Build a Database:**
+   - Create an SQL database using SQL Server to store the hotel data.
 
-# Solutions/pipeline.
-- Build a Database
-- Develop the SQL Query
-- Connect Power BI to the Database
-- Visualize
-- Summarize findings.
+2. **Develop the SQL Query:**
+   - Import the Excel data into the SQL database, ensuring compatibility with the Access database engine (32-bit version).
 
+3. **Connect Power BI to the Database:**
+   - Establish a connection between the SQL database and Power BI to fetch data.
 
-####issue encountered#### 
-(During importing all excel files to Sql database, Access database engine needed to be the same version with SQl 
-Import and export Wizard, which comes in 32bits, by default Access database engine is installed based on your 
-office version, which is 64bits... solution was to download the 32bits version of Access database engine and install 
-and run it in command prompt as quiet C:\Users\user\Downloads\Programs\accessdatabaseengine/quiet)
+4. **Visualize:**
+   - Build a visual data story or dashboard in Power BI to present the analysis.
 
+5. **Summarize Findings:**
+   - Provide clear and concise conclusions based on the insights derived from the visualizations.
 
+## Issue Encountered
+During the process of importing all Excel files to the SQL database, a compatibility issue arose with the Access database engine. As the default installation is 64-bit, it did not match the 32-bit version required by the SQL Import and Export Wizard. The solution involved downloading and installing the 32-bit version of the Access database engine. The command prompt was then used to run the installation quietly.
 
-Querying the database by writing SQL queries
+## SQL Queries
+The following SQL queries were used to perform the analysis:
 
-select * from dbo.['2018$']
-Union
-select * from dbo.['2019$']
-union
-select * from dbo.['2020$']
+1. **Appending Tables and Creating a Table Function:**
+   ```sql
+   SELECT * FROM dbo.[2018$]
+   UNION
+   SELECT * FROM dbo.[2019$]
+   UNION
+   SELECT * FROM dbo.[2020$]
+   ```
+   The `UNION` command is used to append all the tables together. A table function named `T_hotels` was created to store the result.
 
-( * all columns)... from table
-"Union" command is to append all tables
+2. **Calculating Total Revenue:**
+   ```sql
+   SELECT (stays_in_week_nights + stays_in_weekend_nights) * adr AS revenue FROM T_hotels
+   ```
+   This query calculates the revenue by multiplying the sum of nights stayed with the average daily rate (adr).
 
-Above set select statements is a query that runs everytime you press execute and you want to refer to all the select statement
-in one go.
-You create a table function... to make all the appended selected tables to be one table
+3. **Grouping Revenue by Year:**
+   ```sql
+   SELECT arrival_date_year, SUM((stays_in_week_nights + stays_in_weekend_nights) * adr) AS revenue
+   FROM T_hotels
+   GROUP BY arrival_date_year
+   ```
+   The revenue is grouped by year to analyze revenue growth over time.
 
-with T_hotels as (
-select * from dbo.['2018$']
-Union
-select * from dbo.['2019$']
-union
-select * from dbo.['2020$'])
+4. **Segmenting Revenue by Hotel Type:**
+   ```sql
+   SELECT arrival_date_year, hotel, ROUND(SUM((stays_in_week_nights + stays_in_weekend_nights) * adr), 2) AS revenue
+   FROM T_hotels
+   GROUP BY arrival_date_year, hotel
+   ```
+   This query further segments the revenue by hotel type in addition to the year.
 
-t_hotel is now like a variable...storing all the select statements
+5. **Joining Tables for Additional Analysis:**
+   ```sql
+   SELECT *
+   FROM T_hotels
+   LEFT JOIN dbo.market_segment$ ON T_hotels.market_segment = market_segment$.market_segment
+   LEFT JOIN dbo.meal_cost$ ON meal_cost$.meal = T_hotels.meal
+   ```
+   The tables `market_segment$` and `meal_cost$` are joined with `T_hotels` to perform additional analysis and understand the impact on revenue.
 
+## Conclusion
+By following the outlined steps and running the SQL queries mentioned above, the data analyst has successfully generated meaningful insights into the hotel revenue. These insights are presented in a visually appealing manner using Power BI, allowing stakeholders to make informed decisions based on the analysis.
 
-To get the total revenue of the hotel
-we'll add both stay_in-weekend + stay_in-nights to become one column as the quantity
-then multiply the  adr, that is the total cost per day
-to get the total revenue
-
-Select (stays_in_week_nights + stays_in_weekend_nights)*adr from T_hotels
-
-to give this column a header (give it an Alias) 
-
-Select (stays_in_week_nights + stays_in_weekend_nights)*adr as revenue from T_hotels
-
-To categorize this revenue column by year (inother to see how it behaves)
-so we'll bring arrivaldateyear column
- 	
-Select arrival_date_year,
- (stays_in_week_nights + stays_in_weekend_nights)*adr as revenue 
-from T_hotels
-
-
-so we'll group the arrivaldateyear column and sum the revenue by year
-
-Select arrival_date_year,
- Sum((stays_in_week_nights + stays_in_weekend_nights)*adr) as revenue 
-from T_hotels
-Group by arrival_date_year
-
-so the stakeholders required to know if their revenue were growing per year.. and this query gives that
-
-now the stakeholders also wanted to broken down by hotel type
-
-we'll now add one more column
-note; since youre adding hotel type column, youll need to add hotel type to the groupby statement as well
-
-Select arrival_date_year, hotel,
-
- Round(Sum((stays_in_week_nights + stays_in_weekend_nights)*adr),2) as revenue 
-
-from T_hotels
-
-Group by arrival_date_year, hotel
-
-basically, we've given the stakeholders analysis on thier revenue per year based on hotel type 
-but we havent made effect to the other tables in our database (market_segment & meal cost)
-in the marketsegment table, it gives a discount to the segment charge.. 
-
-so we need to perform a join to our initial table
-
-Select * from T_hotels
-left Join dbo.market_segment$
-on T_hotels.market_segment = market_segment$.market_segment
-
-left join brings all the information on the table whether theres a match or not
-
-we want to do the same left join to meal cost table
-
-Select * from T_hotels
-left Join dbo.market_segment$
-on T_hotels.market_segment = market_segment$.market_segment
-left join dbo.meal_cost$
-on meal_cost$.meal = T_hotels.meal
+The analysis showcases trends in hotel revenue growth over the years, the impact of hotel type on revenue, and valuable information on guest behaviors related to personal cars. The analysis also explores the seasonality aspects of average daily rates and guests. These findings will help the stakeholders to make data-driven decisions, optimize revenue streams, and improve guest experiences.
