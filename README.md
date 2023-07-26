@@ -1,19 +1,19 @@
 # Hotel Revenue Analysis - Data Analyst Readme
 
 ## Overview
-This project focuses on analyzing hotel revenue using SQL and Power BI integrations. The goal is to build an end-to-end visual project to answer various business questions posed by stakeholders. The analysis involves creating an SQL database, uploading Excel data to the database, connecting it to Power BI, and building visualizations to present key insights.
+This project focuses on analyzing hotel revenue using SQL and Power BI integration. The goal is to build an end-to-end visual project to answer various business questions posed by stakeholders. The analysis involves creating an SQL database, uploading Excel data to the database, connecting it to Power BI, and building visualizations to present key insights.
 
 ## Business Questions
 The stakeholders have raised the following questions that need to be addressed through the data analysis:
 
-1. **Is our hotel revenue growing year over year?**
+1. **Is our hotel revenue growing by year?**
    - To answer this, revenue will be segmented by year, and further segmented by two hotel types.
    
 2. **Should I increase the parking lot size?**
    - This question aims to ascertain if there is a trend in guests with personal cars.
 
 3. **What trends can be seen in the data?**
-   - The focus will be on the average daily rate and guests' exploration of seasonality.
+   - The focus will be on average daily rate and guests to explore seasonality.
 
 ## Solutions/Pipeline
 The data analyst will follow these steps to conduct the analysis and provide meaningful insights:
@@ -22,7 +22,7 @@ The data analyst will follow these steps to conduct the analysis and provide mea
    - Create an SQL database using SQL Server to store the hotel data.
 
 2. **Develop the SQL Query:**
-   - Import the Excel data into the SQL database, ensuring compatibility with the Access database engine (32-bit version).
+   - Import the Excel data into the SQL database, ensuring compatibility with Access database engine (32-bit version).
 
 3. **Connect Power BI to the Database:**
    - Establish a connection between the SQL database and Power BI to fetch data.
@@ -81,6 +81,6 @@ The following SQL queries were used to perform the analysis:
    The tables `market_segment$` and `meal_cost$` are joined with `T_hotels` to perform additional analysis and understand the impact on revenue.
 
 ## Conclusion
-By following the outlined steps and running the SQL queries mentioned above, the data analyst has successfully generated meaningful insights into the hotel revenue. These insights are presented in a visually appealing manner using Power BI, allowing stakeholders to make informed decisions based on the analysis.
+By following the outlined steps and running the SQL queries mentioned above, the data analyst has successfully generated meaningful insights into the hotel's revenue. These insights are presented in a visually appealing manner using Power BI, allowing stakeholders to make informed decisions based on the analysis.
 
 The analysis showcases trends in hotel revenue growth over the years, the impact of hotel type on revenue, and valuable information on guest behaviors related to personal cars. The analysis also explores the seasonality aspects of average daily rates and guests. These findings will help the stakeholders to make data-driven decisions, optimize revenue streams, and improve guest experiences.
