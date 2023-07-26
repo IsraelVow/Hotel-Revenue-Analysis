@@ -1,7 +1,7 @@
 # Hotel Revenue Analysis - Data Analyst Readme
 
 ## Overview
-This project focuses on analyzing hotel revenue using SQL and Power BI integration. The goal is to build an end-to-end visual project to answer various business questions posed by stakeholders. The analysis involves creating an SQL database, uploading Excel data to the database, connecting it to Power BI, and building visualizations to present key insights.
+This project focuses on analyzing hotel revenue using SQL and Power BI integrations. The goal is to build an end-to-end visual project to answer various business questions posed by stakeholders. The analysis involves creating an SQL database, uploading Excel data to the database, connecting it to Power BI, and building visualizations to present key insights.
 
 ## Business Questions
 The stakeholders have raised the following questions that need to be addressed through the data analysis:
