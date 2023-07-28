@@ -80,6 +80,17 @@ The following SQL queries were used to perform the analysis:
    ```
    The tables `market_segment$` and `meal_cost$` are joined with `T_hotels` to perform additional analysis and understand the impact on revenue.
 
+## Visualizations and Charts in Power BI:
+
+1. **Cards:**
+2. **Sparkline Line Chart:**
+3. **Slicers for Filtering:**
+4. **Line Chart:**
+5. **Matrix Table:**
+6. **Donut Chart:**
+
+These visualizations and charts have been carefully designed to provide a comprehensive overview of the hotel revenue analysis. The combination of cards, sparklines, line charts, matrix tables, and donut charts allows stakeholders to quickly grasp key insights, and trends, and make data-driven decisions to optimize revenue and improve services. The interactive slicers further enhance the user experience by enabling dynamic filtering of data to focus on specific segments and time periods.
+
 ## Conclusion
 By following the outlined steps and running the SQL queries mentioned above, the data analyst has successfully generated meaningful insights into the hotel's revenue. These insights are presented in a visually appealing manner using Power BI, allowing stakeholders to make informed decisions based on the analysis.
 
