@@ -33,6 +33,8 @@ The data analyst will follow these steps to conduct the analysis and provide mea
 5. **Summarize Findings:**
    - Provide clear and concise conclusions based on the insights derived from the visualizations.
 
+Download the raw dataset [Dataset](https://github.com/IsraelVow/Hotel-Revenue-Analysis/raw/main/hotel_revenue_historical_full.xlsx)
+
 ## Issue Encountered
 During the process of importing all Excel files to the SQL database, a compatibility issue arose with the Access database engine. As the default installation is 64-bit, it did not match the 32-bit version required by the SQL Import and Export Wizard. The solution involved downloading and installing the 32-bit version of the Access database engine. The command prompt was then used to run the installation quietly.
 
