@@ -82,12 +82,13 @@ The following SQL queries were used to perform the analysis:
 
 ## Visualizations and Charts in Power BI:
 
-1. **Cards:**
-2. **Sparkline Line Chart:**
-3. **Slicers for Filtering:**
-4. **Line Chart:**
-5. **Matrix Table:**
-6. **Donut Chart:**
+1. **Cards**
+2. **Sparkline**
+3. **Line Chart**
+4. **Slicers for Filtering**
+5. **Line Chart**
+6. **Matrix Table**
+7. **Donut Chart**
 
 These visualizations and charts have been carefully designed to provide a comprehensive overview of the hotel revenue analysis. The combination of cards, sparklines, line charts, matrix tables, and donut charts allows stakeholders to quickly grasp key insights, and trends, and make data-driven decisions to optimize revenue and improve services. The interactive slicers further enhance the user experience by enabling dynamic filtering of data to focus on specific segments and time periods.
 
