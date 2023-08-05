@@ -24,6 +24,6 @@ After performing the Hotel Revenue Analysis using SQL and Power BI, the followin
    - By analyzing the booking changes and cancellation data, it was observed that guests who made frequent booking changes were more likely to cancel their reservations. This insight highlights the importance of providing clear and flexible booking policies to reduce cancellations.
 
 8. **Customer Segmentation and Repeat Guests:**
-   - The data revealed that the majority of guests were transient customers, and repeat guests were relatively rare. To improve guest loyalty and encourage repeat visits, the hotel management could consider implementing personalized loyalty programs and tailored guest experiences.
+   - The data revealed that the majority of guests were transient customers, and repeat guests were relatively rare. To improve guest loyalty and encourage repeat visits, the hotel management could consider implementing personalized loyalty programs and tailoring guest experiences.
 
-These insights and findings provide valuable information for the hotel management to make data-driven decisions and enhance revenue growth, guest satisfaction, and operational efficiency. The end-to-end visual project in Power BI enables stakeholders to have a comprehensive understanding of the hotel's performance and potential areas for improvement.
+These insights and findings provide valuable information for hotel management to make data-driven decisions and enhance revenue growth, guest satisfaction, and operational efficiency. The end-to-end visual project in Power BI enables stakeholders to have a comprehensive understanding of the hotel's performance and potential areas for improvement.
