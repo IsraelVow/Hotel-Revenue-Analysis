@@ -6,14 +6,14 @@ This project focuses on analyzing hotel revenue using SQL and Power BI integrati
 ## Business Questions
 The stakeholders have raised the following questions that need to be addressed through the data analysis:
 
-1. **Is our hotel revenue growing by year?**
+1. **Is our hotel revenue growing year over year?**
    - To answer this, revenue will be segmented by year, and further segmented by two hotel types.
    
 2. **Should I increase the parking lot size?**
    - This question aims to ascertain if there is a trend in guests with personal cars.
 
 3. **What trends can be seen in the data?**
-   - The focus will be on average daily rate and guests to explore seasonality.
+   - The focus will be on the average daily rate and guests' exploration of seasonality.
 
 ## Solutions/Pipeline
 The data analyst will follow these steps to conduct the analysis and provide meaningful insights:
@@ -22,7 +22,7 @@ The data analyst will follow these steps to conduct the analysis and provide mea
    - Create an SQL database using SQL Server to store the hotel data.
 
 2. **Develop the SQL Query:**
-   - Import the Excel data into the SQL database, ensuring compatibility with Access database engine (32-bit version).
+   - Import the Excel data into the SQL database, ensuring compatibility with the Access database engine (32-bit version).
 
 3. **Connect Power BI to the Database:**
    - Establish a connection between the SQL database and Power BI to fetch data.
@@ -55,7 +55,7 @@ The following SQL queries were used to perform the analysis:
    ```sql
    SELECT (stays_in_week_nights + stays_in_weekend_nights) * adr AS revenue FROM T_hotels
    ```
-   This query calculates the revenue by multiplying the sum of nights stayed with the average daily rate (adr).
+   This query calculates the revenue by multiplying the sum of nights stayed with the average daily rate (ADR).
 
 3. **Grouping Revenue by Year:**
    ```sql
